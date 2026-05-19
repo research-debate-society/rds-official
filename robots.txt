@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aflatoon1o1.github.io/rds-site/sitemap.xml
+Sitemap: https://research-debate-society.github.io/rds-official/sitemap.xml

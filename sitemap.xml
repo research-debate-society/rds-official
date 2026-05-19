@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/</loc>
+    <loc>https://research-debate-society.github.io/rds-official/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/rds-articles.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/rds-articles.html</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/rds-opinion-articles.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/rds-opinion-articles.html</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/rds-research-articles.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/rds-research-articles.html</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/rds-review-articles.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/rds-review-articles.html</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/rds-team.html</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/rds-about.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/rds-team.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/rds-contact.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/rds-about.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://research-debate-society.github.io/rds-official/rds-contact.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/articles/bioterrorism-south-asia.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/articles/bioterrorism-south-asia.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/articles/zinoviev-letter.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/articles/zinoviev-letter.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/opinion/performative-spectacles.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/opinion/performative-spectacles.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/opinion/district-kurram-fata.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/opinion/district-kurram-fata.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://aflatoon1o1.github.io/rds-site/research/proxy-wars-kurram-kpk.html</loc>
+    <loc>https://research-debate-society.github.io/rds-official/research/proxy-wars-kurram-kpk.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
