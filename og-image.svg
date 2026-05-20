@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#112236"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c5973a;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#c5973a;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle gold glow top right -->
+  <ellipse cx="1050" cy="120" rx="400" ry="300" fill="url(#glow)"/>
+
+  <!-- Bottom glow -->
+  <ellipse cx="200" cy="580" rx="300" ry="200" fill="url(#glow)"/>
+
+  <!-- Top border line -->
+  <rect x="0" y="0" width="1200" height="3" fill="#c5973a" opacity="0.6"/>
+
+  <!-- Left accent line -->
+  <rect x="72" y="80" width="1" height="470" fill="#c5973a" opacity="0.25"/>
+
+  <!-- Eyebrow text -->
+  <text x="96" y="148" font-family="Georgia, serif" font-size="15" fill="#c5973a" letter-spacing="5" opacity="0.9">ISLAMIA COLLEGE UNIVERSITY PESHAWAR</text>
+
+  <!-- Decorative dash before eyebrow -->
+  <rect x="96" y="113" width="40" height="1" fill="#c5973a" opacity="0.7"/>
+
+  <!-- Main title -->
+  <text x="96" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#f5f0e8" letter-spacing="-1">Research &amp;</text>
+  <text x="96" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="#e8c06a" font-style="italic" letter-spacing="-1">Debate Society</text>
+
+  <!-- Divider -->
+  <rect x="96" y="388" width="120" height="2" fill="#c5973a" opacity="0.6"/>
+
+  <!-- Tagline -->
+  <text x="96" y="436" font-family="Georgia, serif" font-size="22" fill="#9a9285" letter-spacing="1">Knowledge as a Human Right</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="560" width="1200" height="70" fill="#0a1520" opacity="0.6"/>
+  <text x="96" y="602" font-family="Georgia, serif" font-size="17" fill="#c5973a" letter-spacing="3">RDS — ICUP</text>
+  <text x="1104" y="602" font-family="Georgia, serif" font-size="17" fill="#9a9285" letter-spacing="1" text-anchor="end">research-debate-society.github.io/rds-official</text>
+
+  <!-- Decorative geometric element -->
+  <rect x="900" y="200" width="180" height="180" fill="none" stroke="#c5973a" stroke-width="1" opacity="0.15" transform="rotate(15, 990, 290)"/>
+  <rect x="920" y="220" width="140" height="140" fill="none" stroke="#c5973a" stroke-width="1" opacity="0.1" transform="rotate(15, 990, 290)"/>
+  <circle cx="990" cy="290" r="60" fill="none" stroke="#c5973a" stroke-width="1" opacity="0.12"/>
+
+  <!-- RDS monogram inside geometric -->
+  <text x="990" y="302" font-family="Georgia, serif" font-size="36" font-weight="700" fill="#c5973a" opacity="0.3" text-anchor="middle" letter-spacing="2">RDS</text>
+</svg>
