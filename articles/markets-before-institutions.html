@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base target="_top">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markets Before Institutions — Research & Debate Society</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
+    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
+    --border: rgba(197,151,58,0.2);
+  }
+  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+  a { text-decoration: none; }
+
+  /* NAV BAR — matches live site */
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 48px; border-bottom: 1px solid var(--border);
+    flex-wrap: wrap; gap: 16px;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--cream); letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 32px; flex-wrap: wrap; }
+  .nav-links a {
+    font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-dim); transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  /* BREADCRUMB */
+  .breadcrumb { padding: 24px 48px 0; font-size: 12px; color: var(--text-dim); }
+  .breadcrumb a { color: var(--text-dim); }
+  .breadcrumb a:hover { color: var(--gold); }
+
+  /* ARTICLE HEADER */
+  .article-header { padding: 40px 48px 48px; border-bottom: 1px solid var(--border); max-width: 800px; }
+  .tag { display: inline-block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 4px 12px; margin-bottom: 24px; }
+  .article-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 46px); font-weight: 700; color: var(--cream); line-height: 1.15; margin-bottom: 24px; }
+  .byline { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 14px; color: var(--text-dim); }
+  .byline .name { color: var(--cream-dim); font-weight: 500; }
+  .byline .dot { width: 3px; height: 3px; background: var(--text-dim); border-radius: 50%; display: inline-block; }
+  .author-role { font-size: 13px; color: var(--text-dim); margin-top: 8px; line-height: 1.7; }
+
+  /* ARTICLE BODY */
+  .article-body { padding: 48px 48px 64px; max-width: 760px; }
+
+  .editorial-note { background: rgba(197,151,58,0.05); border-left: 2px solid var(--gold); padding: 24px 28px; margin-bottom: 40px; }
+  .editorial-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .editorial-note p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin: 0; }
+
+  .article-body p { font-size: 16px; color: var(--cream-dim); line-height: 1.95; margin-bottom: 22px; }
+  .article-body h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin: 36px 0 16px; font-weight: 600; }
+
+  /* SOURCE / CITATION */
+  .source-block {
+    margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border);
+  }
+  .source-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 10px; }
+  .source-citation { font-size: 13px; color: var(--text-dim); line-height: 1.8; margin-bottom: 24px; font-style: italic; }
+  .ext-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--gold); letter-spacing: 0.5px; text-transform: uppercase;
+    border: 1px solid var(--border); padding: 12px 20px; transition: border-color 0.2s, color 0.2s;
+  }
+  .ext-link:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  /* BACK LINK */
+  .back-link { padding: 0 48px 64px; }
+  .back-link a { font-size: 13px; color: var(--text-dim); letter-spacing: 0.5px; transition: color 0.2s; }
+  .back-link a:hover { color: var(--gold); }
+
+  /* FOOTER */
+  .footer-band {
+    padding: 40px 48px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  .footer-name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--cream-dim); }
+  .footer-detail { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+  .footer-contact { font-size: 13px; color: var(--gold); }
+  .footer-contact:hover { color: var(--gold-light); }
+
+  @media (max-width: 768px) {
+    .nav { padding: 20px 24px; }
+    .nav-links { gap: 18px; }
+    .breadcrumb { padding: 20px 24px 0; }
+    .article-header { padding: 32px 24px 36px; }
+    .article-body { padding: 36px 24px 48px; }
+    .back-link { padding: 0 24px 48px; }
+    .footer-band { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">RDS</div>
+  <div class="nav-links">
+    <a href="https://research-debate-society.github.io/rds-official/index.html">HOME</a>
+    <a class="active" href="https://research-debate-society.github.io/rds-official/rds-articles.html">ARTICLES</a>
+    <a href="https://research-debate-society.github.io/rds-official/opinion">OPINION</a>
+    <a href="https://research-debate-society.github.io/rds-official/research">RESEARCH</a>
+    <a href="https://research-debate-society.github.io/rds-official/rds-review-articles.html">REVIEWS</a>
+    <a href="https://research-debate-society.github.io/rds-official/rds-team.html">TEAM</a>
+    <a href="https://research-debate-society.github.io/rds-official/rds-about.html">ABOUT</a>
+    <a href="https://research-debate-society.github.io/rds-official/rds-contact.html">CONTACT</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="https://research-debate-society.github.io/rds-official/rds-articles.html">← Back to Articles</a>
+</div>
+
+<header class="article-header">
+  <span class="tag">Article · Political Economy</span>
+  <h1>Markets Before Institutions</h1>
+  <div class="byline">
+    <span class="name">Dr Ali Salman</span>
+    <span class="dot"></span>
+    <span>March 23, 2026</span>
+    <span class="dot"></span>
+    <span>3 min read</span>
+  </div>
+  <div class="author-role">Economist · Founder &amp; CEO, PRIME Institute · CEO, Islam and Liberty Network</div>
+</header>
+
+<article class="article-body">
+
+  <div class="editorial-note">
+    <div class="editorial-label">Editorial Note</div>
+    <p>There is a common assumption in development economics that strong institutions must come before unleashing the market. Dr. Ali Salman challenges this directly: if we wait for Pakistan to have perfectly functioning, textbook institutions, we might just be waiting forever. Drawing on research from the Chinese experience, he argues that markets and institutions can co-evolve rather than follow a strict sequence, and that Pakistan's continuing expansion of the state into the economy has been a rigid obstacle to sustained growth. We are featuring this article as part of our ongoing series on Pakistan's political economy, and as a follow-up to our discussion on the budget.</p>
+  </div>
+
+  <p>A common critique of market economics, especially in the developing world, is that it needs perfect institutions to work. These market imperfections, such as monopolies, dominance of firms, state capture by interest groups, weak rule of law, and information asymmetry, pose structural problems for markets to function, critics argue.</p>
+
+  <p>It is believed that we ought to remove these market imperfections or inefficiencies first to let a market economy emerge and flourish. In short, administrative and legal institutions should pre-empt a spontaneous, market-led order; otherwise, we will face the risk of exploitation and sub-optimal socio-economic outcomes.</p>
+
+  <p>This is the essence of contemporary work on institutional economics, which has formed the basis of the well-known book "Why Nations Fail: The Origins of Power, Prosperity and Poverty" by Acemoglu and Robinson, who received the Nobel Prize in Economics in 2024.</p>
+
+  <p>There is another view, however. In this article, I argue, using the framework of co-evolution developed by Yuen Yuen Ang in her book "How China Escaped Poverty", that markets do not have to wait for strong institutions. A neat temporal separation between two events — establishment of institutions and sustained economic growth — is impossible. Both co-evolve.</p>
+
+  <p>In the case of China, as Yuen masterfully demonstrates in her book, economic development actually preceded the emergence of formal, transparent institutions — her insight: "build markets with weak institutions".</p>
+
+  <p>China, she tells us, did not start neatly with a set of well-developed institutions. It began with a messy and chaotic reorganisation of its economy. Once it saw the fruits of economic development, the government and society started building institutional competence.</p>
+
+  <p>As China progressed, it also invested in building formal institutions, which complemented the speed of economic development. Thus, we can see a feedback loop — economic development, institutional strengthening, more economic development, and so on. Yuen argues that the role of institutions in advanced industrial economies is to preserve markets.</p>
+
+  <p>At the time of independence, Pakistan had "weak institutions", but there was a strong entrepreneurial and merchant class that migrated from India and settled in Karachi. This network of Muslim business elite played a critical role in early economic development. The state played catch-up. It established development finance institutions and a supportive network.</p>
+
+  <p>However, it went to another extreme. Instead of nurturing entrepreneurial talent, it started distributing capital, quotas, and preferences. It took the route of state capitalism. The nationalisation of the 1970s was, in one way, a consequence — and not a reaction — of state capitalism! The first sign of commanding heights was the forceful takeover of Orient Airways by Pakistan's parliament in 1955 and the incorporation of Pakistan Airlines.</p>
+
+  <p>While privatisation and deregulation started in the 1990s, and did bring a wave of economic reforms, we could not completely uproot the statist foundations of our economy.</p>
+
+  <p>The most telling example of this contest — between the state and the market — is the unbundling of Wapda. All electricity distribution companies were corporatised, and a new entity, Pakistan Electric Power Company (Pepco), was established in 1998 for "effective monitoring and oversight of the distribution companies (DISCOs)".</p>
+
+  <p>Thus, the state kept its footprint, which has only increased. A quarter century later, we are now witnessing the revival of Pepco as Power Planning and Monitoring Company (PPMC). The energy sector continues to drag our markets and has become an Achilles heel of the state.</p>
+
+  <p>Learning from the episode of PPMC, let me offer a new formulation of a well-known reality. When an entrepreneur sets up a company and it fails, they exit and close the company. When the state establishes a company and it fails, the state injects more money to revive it.</p>
+
+  <p>Historically, we have suppressed and curbed entrepreneurial talent in the country through two channels. One, by strangulation in the name of regulation. We are setting up more regulatory bodies with each passing day. At the federal level alone, there are 122 regulatory bodies. There are multiple bodies to keep a check on the same business, performing the same function.</p>
+
+  <p>Second, the continued and expanding footprint of the government in the market. The federal government has exited the airlines business, but the Punjab government has entered through Air Punjab. When a government enters a business, it distorts the level playing field. It has access to guaranteed capital and can arm-twist regulatory bodies. At entry level, no private firm can do it.</p>
+
+  <p>The government has enacted the Asaan Karobar Act and has undertaken a comprehensive regulatory guillotine process. These are good signs. It will be a huge challenge for the government to use these mechanisms to eradicate the statist roots of our economy and trim them where necessary.</p>
+
+  <div class="source-block">
+    <div class="source-label">Source &amp; Citation</div>
+    <div class="source-citation">Ali Salman, "Markets before institutions," <em>The Express Tribune</em>, March 23, 2026.</div>
+    <a class="ext-link" href="https://tribune.com.pk/story/2598790/markets-before-institutions" target="_blank">
+      ↗ Read Original on The Express Tribune
+    </a>
+  </div>
+
+</article>
+
+<div class="back-link">
+  <a href="https://research-debate-society.github.io/rds-official/rds-articles.html">← Back to Articles</a>
+</div>
+
+<div class="footer-band">
+  <div>
+    <div class="footer-name">Research &amp; Debate Society — ICUP</div>
+    <div class="footer-detail">Islamia College University Peshawar · Department of Political Science</div>
+  </div>
+  <a class="footer-contact" href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>
+</div>
+
+</body>
+</html>
