@@ -1,136 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base target="_top">
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="../rds-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Markets Before Institutions — Research & Debate Society</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0d1b2a; --gold: #c5973a; --gold-light: #e8c06a;
-    --cream: #f5f0e8; --cream-dim: #d9d0be; --text-dim: #9a9285;
-    --border: rgba(197,151,58,0.2);
-  }
-  body { background: var(--navy); color: var(--cream); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
-  a { text-decoration: none; }
-
-  /* NAV BAR — matches live site */
-  .nav {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 24px 48px; border-bottom: 1px solid var(--border);
-    flex-wrap: wrap; gap: 16px;
-  }
-  .nav-logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--cream); letter-spacing: 1px; }
-  .nav-links { display: flex; gap: 32px; flex-wrap: wrap; }
-  .nav-links a {
-    font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--text-dim); transition: color 0.2s;
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-
-  /* BREADCRUMB */
-  .breadcrumb { padding: 24px 48px 0; font-size: 12px; color: var(--text-dim); }
-  .breadcrumb a { color: var(--text-dim); }
-  .breadcrumb a:hover { color: var(--gold); }
-
-  /* ARTICLE HEADER */
-  .article-header { padding: 40px 48px 48px; border-bottom: 1px solid var(--border); max-width: 800px; }
-  .tag { display: inline-block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 4px 12px; margin-bottom: 24px; }
-  .article-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 46px); font-weight: 700; color: var(--cream); line-height: 1.15; margin-bottom: 24px; }
-  .byline { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; font-size: 14px; color: var(--text-dim); }
-  .byline .name { color: var(--cream-dim); font-weight: 500; }
-  .byline .dot { width: 3px; height: 3px; background: var(--text-dim); border-radius: 50%; display: inline-block; }
-  .author-role { font-size: 13px; color: var(--text-dim); margin-top: 8px; line-height: 1.7; }
-
-  /* ARTICLE BODY */
-  .article-body { padding: 48px 48px 64px; max-width: 760px; }
-
-  .editorial-note { background: rgba(197,151,58,0.05); border-left: 2px solid var(--gold); padding: 24px 28px; margin-bottom: 40px; }
-  .editorial-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .editorial-note p { font-size: 14px; color: var(--text-dim); line-height: 1.85; margin: 0; }
-
-  .article-body p { font-size: 16px; color: var(--cream-dim); line-height: 1.95; margin-bottom: 22px; }
-  .article-body h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--cream); margin: 36px 0 16px; font-weight: 600; }
-
-  /* SOURCE / CITATION */
-  .source-block {
-    margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border);
-  }
-  .source-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--cream-dim); margin-bottom: 10px; }
-  .source-citation { font-size: 13px; color: var(--text-dim); line-height: 1.8; margin-bottom: 24px; font-style: italic; }
-  .ext-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 13px; color: var(--gold); letter-spacing: 0.5px; text-transform: uppercase;
-    border: 1px solid var(--border); padding: 12px 20px; transition: border-color 0.2s, color 0.2s;
-  }
-  .ext-link:hover { border-color: var(--gold); color: var(--gold-light); }
-
-  /* BACK LINK */
-  .back-link { padding: 0 48px 64px; }
-  .back-link a { font-size: 13px; color: var(--text-dim); letter-spacing: 0.5px; transition: color 0.2s; }
-  .back-link a:hover { color: var(--gold); }
-
-  /* FOOTER */
-  .footer-band {
-    padding: 40px 48px; border-top: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-  }
-  .footer-name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--cream-dim); }
-  .footer-detail { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
-  .footer-contact { font-size: 13px; color: var(--gold); }
-  .footer-contact:hover { color: var(--gold-light); }
-
-  @media (max-width: 768px) {
-    .nav { padding: 20px 24px; }
-    .nav-links { gap: 18px; }
-    .breadcrumb { padding: 20px 24px 0; }
-    .article-header { padding: 32px 24px 36px; }
-    .article-body { padding: 36px 24px 48px; }
-    .back-link { padding: 0 24px 48px; }
-    .footer-band { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-  }
-</style>
+<title>Markets Before Institutions — RDS</title>
+<meta name="description" content="Dr. Ali Salman challenges the assumption that strong institutions must precede market liberalization, drawing on China's experience to argue that markets and institutions co-evolve — and that Pakistan's expanding state footprint remains the real obstacle to growth.">
+<meta name="keywords" content="markets, institutions, Pakistan economy, Ali Salman, PRIME Institute, institutional economics, China, state capitalism, political economy">
+<link rel="canonical" href="https://research-debate-society.github.io/rds-official/articles/markets-before-institutions.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../rds-styles.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3XSXDY2PG7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3XSXDY2PG7');
+</script>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markets Before Institutions">
+  <meta property="og:description" content="Dr. Ali Salman challenges the assumption that strong institutions must precede market liberalization, drawing on China's experience to argue that markets and institutions co-evolve.">
+  <meta property="og:url" content="https://research-debate-society.github.io/rds-official/articles/markets-before-institutions.html">
+  <meta property="og:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
+  <meta property="og:site_name" content="Research & Debate Society">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Markets Before Institutions">
+  <meta name="twitter:description" content="Dr. Ali Salman challenges the assumption that strong institutions must precede market liberalization, drawing on China's experience to argue that markets and institutions co-evolve.">
+  <meta name="twitter:image" content="https://research-debate-society.github.io/rds-official/rds-seal-main.png">
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-logo">RDS</div>
+<nav class="site-nav">
+  <a class="nav-brand" href="../index.html">RDS</a>
   <div class="nav-links">
-    <a href="https://research-debate-society.github.io/rds-official/index.html">HOME</a>
-    <a class="active" href="https://research-debate-society.github.io/rds-official/rds-articles.html">ARTICLES</a>
-    <a href="https://research-debate-society.github.io/rds-official/opinion">OPINION</a>
-    <a href="https://research-debate-society.github.io/rds-official/research">RESEARCH</a>
-    <a href="https://research-debate-society.github.io/rds-official/rds-review-articles.html">REVIEWS</a>
-    <a href="https://research-debate-society.github.io/rds-official/rds-team.html">TEAM</a>
-    <a href="https://research-debate-society.github.io/rds-official/rds-about.html">ABOUT</a>
-    <a href="https://research-debate-society.github.io/rds-official/rds-contact.html">CONTACT</a>
+    <a href="../index.html">Home</a>
+    <a href="../rds-articles.html" class="active">Articles</a>
+    <a href="../rds-opinion-articles.html">Opinion</a>
+    <a href="../rds-research-articles.html">Research</a>
+    <a href="../rds-review-articles.html">Reviews</a>
+    <a href="../rds-team.html">Team</a>
+    <a href="../rds-about.html">About</a>
+    <a href="../rds-contact.html">Contact</a>
+  </div>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
-<div class="breadcrumb">
-  <a href="https://research-debate-society.github.io/rds-official/rds-articles.html">← Back to Articles</a>
+<a class="back-link" href="../rds-articles.html">← Back to Articles</a>
+
+<div class="article-header">
+  <div class="featured-tag">Article · Political Economy</div>
+  <h1 class="article-title">Markets Before Institutions</h1>
+  <div class="article-byline">
+    <div>
+      <span class="author-name">Dr. Ali Salman</span><br>
+      <span class="author-affil">Economist, Founder and CEO PRIME Institute, CEO Islam and Liberty Network</span>
+    </div>
+  </div>
+  <div class="article-pub-meta">
+    <span>Published 23 March 2026</span>
+    <span class="dot"></span><span>3 min read</span>
+  </div>
 </div>
 
-<header class="article-header">
-  <span class="tag">Article · Political Economy</span>
-  <h1>Markets Before Institutions</h1>
-  <div class="byline">
-    <span class="name">Dr Ali Salman</span>
-    <span class="dot"></span>
-    <span>March 23, 2026</span>
-    <span class="dot"></span>
-    <span>3 min read</span>
-  </div>
-  <div class="author-role">Economist · Founder &amp; CEO, PRIME Institute · CEO, Islam and Liberty Network</div>
-</header>
+<a class="external-link-box" href="https://tribune.com.pk/story/2598790/markets-before-institutions" target="_blank" rel="noopener">
+  <span>Read the original post on The Express Tribune</span>
+  <span class="ext-arrow">↗</span>
+</a>
 
-<article class="article-body">
+<div class="article-body">
 
-  <div class="editorial-note">
-    <div class="editorial-label">Editorial Note</div>
-    <p>There is a common assumption in development economics that strong institutions must come before unleashing the market. Dr. Ali Salman challenges this directly: if we wait for Pakistan to have perfectly functioning, textbook institutions, we might just be waiting forever. Drawing on research from the Chinese experience, he argues that markets and institutions can co-evolve rather than follow a strict sequence, and that Pakistan's continuing expansion of the state into the economy has been a rigid obstacle to sustained growth. We are featuring this article as part of our ongoing series on Pakistan's political economy, and as a follow-up to our discussion on the budget.</p>
+  <div style="border-left:3px solid var(--gold);padding:18px 24px;margin-bottom:36px;background:rgba(180,145,60,0.06);">
+    <div style="font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Editorial Note</div>
+    <p style="margin:0;font-size:15px;line-height:1.7;color:var(--text-muted);">There is a common assumption in development economics that strong institutions must come before unleashing the market. Dr. Ali Salman challenges this directly: if we wait for Pakistan to have perfectly functioning, textbook institutions, we might just be waiting forever. Drawing on research from the Chinese experience, he argues that markets and institutions can co-evolve rather than follow a strict sequence, and that Pakistan's continuing expansion of the state into the economy has been a rigid obstacle to sustained growth. We are featuring this article as part of our ongoing series on Pakistan's political economy, and as a follow-up to our discussion on the budget.</p>
   </div>
 
   <p>A common critique of market economics, especially in the developing world, is that it needs perfect institutions to work. These market imperfections, such as monopolies, dominance of firms, state capture by interest groups, weak rule of law, and information asymmetry, pose structural problems for markets to function, critics argue.</p>
@@ -165,24 +109,21 @@
 
   <p>The government has enacted the Asaan Karobar Act and has undertaken a comprehensive regulatory guillotine process. These are good signs. It will be a huge challenge for the government to use these mechanisms to eradicate the statist roots of our economy and trim them where necessary.</p>
 
-  <div class="source-block">
-    <div class="source-label">Source &amp; Citation</div>
-    <div class="source-citation">Ali Salman, "Markets before institutions," <em>The Express Tribune</em>, March 23, 2026.</div>
-    <a class="ext-link" href="https://tribune.com.pk/story/2598790/markets-before-institutions" target="_blank">
-      ↗ Read Original on The Express Tribune
-    </a>
-  </div>
+</div>
 
-</article>
-
-<div class="back-link">
-  <a href="https://research-debate-society.github.io/rds-official/rds-articles.html">← Back to Articles</a>
+<div class="citation-box" style="margin:0 48px 40px;max-width:760px;">
+  <div class="citation-label">Cite This Article (APA 7th)</div>
+  <p class="citation-text" id="cite-text">Salman, A. (2026, March 23). Markets before institutions. The Express Tribune. https://tribune.com.pk/story/2598790/markets-before-institutions</p>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('cite-text').innerText);this.innerText='Copied!';setTimeout(()=>this.innerText='Copy Citation',2000)"
+    style="margin-top:14px;padding:8px 20px;background:var(--gold);color:var(--navy);border:none;font-size:12px;font-weight:500;letter-spacing:1px;cursor:pointer;text-transform:uppercase;">
+    Copy Citation
+  </button>
 </div>
 
 <div class="footer-band">
   <div>
-    <div class="footer-name">Research &amp; Debate Society — ICUP</div>
-    <div class="footer-detail">Islamia College University Peshawar · Department of Political Science</div>
+    <div class="footer-name">Research &amp; Debate Society</div>
+    <div class="footer-detail">Peshawar, Khyber Pakhtunkhwa</div>
   </div>
   <a class="footer-contact" href="mailto:researchdebatesociety@gmail.com">researchdebatesociety@gmail.com</a>
 </div>
